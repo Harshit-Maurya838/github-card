@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github Account Viewer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <div class="popup">
+            <div class="popup_card">
+                <p>Enter Github Username</p>
+                <div class="error_msg">
+                    <p class="error">Not Found</p>
+                </div>
+                <div class="username">
+                    <form class="form">
+                        <label for="search">
+                            <input required="" autocomplete="off" placeholder="Username..." id="search" type="text">
+                            <button class="icon">
+                                <svg stroke-width="2" stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="swap-on">
+                                    <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linejoin="round" stroke-linecap="round"></path>
+                                </svg>
+                            </button>
+                            <button type="reset" class="close-btn">
+                                <svg viewBox="0 0 20 20" class="h-5 w-5" xmlns="http://www.w3.org/2000/svg">
+                                    <path clip-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" fill-rule="evenodd"></path>
+                                </svg>
+                            </button>
+                        </label>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="avatar_img">
+                <img src="" alt="">
+            </div>
+            <div class="details">
+                <h1 class="name"></h1>
+                <div class="follows">
+                    <div class="follower">Followers: <span class="follower_count">00</span></div>
+                    <div class="folowing">Following: <span class="following_count">00</span></div>
+                </div>
+            </div>
+            <div class="bio">
+                <div class="location">Location: <span class="location_text"></span></div>
+                <div class="email">Email: <span class="email_text"></span></div>
+                <div class="userbio">Bio:<span class="userbio_text"></span></div>
+            </div>
+            <div class="repo_count">
+                <p class="count_projects"> Total Repo: <span class="repo">00</span>&ensp; • &ensp; Total gists: <span class="gists">00</span></p>
+            </div>
+            <div class="visitbtn">
+                <a href="" class="visit_btn" target="_blank">Visit on Github</a>
+                <a href="#" class="another_btn" onclick="reloadPage()">Another Account</a>
+            </div>
+        </div>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
