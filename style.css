@@ -153,10 +153,11 @@ body,html{
     width: 95%;
     max-width: 450px;
     height: auto;
+    max-height: 500px;
     background-color: white;
     border-radius: 12px;
     color: black;
-    gap: 45px;
+    gap: 20px;
     padding: 15px;
     display: flex;
     flex-direction: column;
@@ -182,7 +183,6 @@ body,html{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
 }
 
 
@@ -264,4 +264,83 @@ body,html{
     transform: scale(1);
     transition: 0s;
     width: 40px;
+}
+
+
+
+/* Username History */
+
+.username_history{
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    height: auto;
+    max-height: 200px;
+    overflow-y: auto;
+    gap: 5px;
+}
+
+.history{
+    list-style: none;
+    width: 80%;
+    background-color: wheat;
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.history >span{
+    width: 100%;
+}
+.history >img{
+    width: 20px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ScrollBar  */
+
+/* For Webkit-based browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 4px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #f0f0f0; /* Light background for the track */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #c0c0c0; /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Rounded corners for the thumb */
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #c0c0c0 #f0f0f0;
+}
+
+/* For Edge and Internet Explorer */
+body {
+    -ms-overflow-style: scrollbar;
 }

@@ -1,5 +1,6 @@
 document.querySelector('.form').addEventListener('submit',()=> event.preventDefault())
 const inputUsernameArea = document.querySelector('#search');
+let userHistory = document.querySelector('.username_history');
 let userName = '';
 
 
@@ -23,6 +24,7 @@ const main = async () =>{
         document.querySelector('.error_msg').style.display = "block";
     }else{
         hidePopup();
+        addHistory(userName);
         document.querySelector('.name').innerText = result.name;
         document.querySelector('.avatar_img img').src = result.avatar_url;
         document.querySelector('.follower_count').innerText = result.followers;
@@ -35,9 +37,36 @@ const main = async () =>{
         document.querySelector('.gists').innerText = result.public_gists;
         document.querySelector('.visit_btn').href = result.html_url;
     }
+    saveData();
 }
 
 const reloadPage = ()=>{
     location.reload();
 }
+
+
+const addHistory= (name) =>{
+    userHistory.innerHTML += `<li class="history"><span>${name}</span> <img src="img/trash-outline.svg" alt="delete"></li>`
+    saveData();
+}
+
+userHistory.addEventListener('click', (e)=>{
+    if(e.target.tagName === "IMG"){
+        e.target.parentElement.remove();
+    }else if(e.target.tagName === "SPAN"){
+        userName = e.target.innerText;
+        main();
+    }
+    saveData();
+})
+
+const saveData = ()=>{
+    localStorage.setItem("history", userHistory.innerHTML)
+}
+
+const showhistory = ()=>{
+    userHistory.innerHTML = localStorage.getItem("history");
+}
+
+showhistory();
 
